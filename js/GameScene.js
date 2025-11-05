@@ -5,7 +5,7 @@ function onGameExited() {
 function onOffline() {
   const offlineTime = new Date().toISOString();
   localStorage.setItem("offlineTime", offlineTime);
-  console.log("Game Exited");
+  console.log("Game Offline");
 }
 
 class GameScene extends Phaser.Scene {
@@ -473,7 +473,7 @@ class GameScene extends Phaser.Scene {
     let addScore = add;
     if (add == this.coinPoints) {
       addScore = this.coinMultiply;
-      this.coinMultiply = this.coinMultiply * 2;
+      this.coinMultiply = this.coinMultiply + this.coinPoints;
       this.carMultiply = 1;
     } else if (add == this.obstaclePointsPenalty) {
       this.coinMultiply = this.coinPoints;
@@ -686,3 +686,4 @@ class GameScene extends Phaser.Scene {
 }
 
 export default GameScene;
+
