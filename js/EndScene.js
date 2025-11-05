@@ -1,4 +1,4 @@
-function showTotalScore(score) {
+function onGameCompleted(score) {
   console.log("game Completed");
   console.log("Total Score: " + score);
 }
@@ -68,7 +68,7 @@ class EndScene extends Phaser.Scene {
             }
           });
 
-          showTotalScore(this.score);
+          onGameCompleted(this.score);
           this.endMenuItems = [];
           this.scene.start("StartScene");
         },
